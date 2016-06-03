@@ -1,0 +1,38 @@
+categories:
+  - key: les-incontournables
+    title: "Les incontournables"
+  - key: une-parole-un-recit
+    title: "Une parole, un récit"
+
+videos:
+  - key: la-crise
+    title: "La crise"
+    category: les-incontournables
+  - key: le-diagnostic
+    title: "Le diagnostic"
+    category: les-incontournables
+  - key: le-cerveau
+    title: "Le cerveau"
+    category: les-incontournables
+  - key: la-folie
+    title: "La folie"
+    category: les-incontournables
+  - key: la-souffrance-psychique
+    title: "La souffrance psychique"
+    category: les-incontournables
+  - key: le-medicament
+    title: "Le médicament"
+    category: les-incontournables
+  - key: les-neurosciences
+    title: "Les neurosciences"
+    category: les-incontournables
+  - key: isolement
+    title: "L'isolement"
+    category: les-incontournables
+
+  - key: waking-life
+    title: "Waking life"
+    category: une-parole-un-recit
+  - key: les-oiseaux
+    title: "Les oiseaux"
+    category: une-parole-un-recit

@@ -1,0 +1,24 @@
+.any-video,
+.main-video,
+.related-video {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.main-video {
+  height: 385px;
+}
+.related-video {
+  display: none;
+  height: 115px;
+}
+.related-video.video-visible {
+  display: block;
+}
+.related-video .video {
+  width: 100%;
+  height: 100%;
+  background-color: #c0c0c0;
+}
+.video-category-hidden {
+  display: none;
+}

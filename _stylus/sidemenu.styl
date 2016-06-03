@@ -1,0 +1,23 @@
+@require 'mixins/variables'
+
+#site-sidemenu
+  margin-top 10px
+
+  ul
+    margin 0
+    padding 0
+    list-style-type none
+
+    li
+      margin-bottom 1em
+
+      &.hidden
+        display none
+
+    &.video-category-active
+      li
+        a
+          color $muted-font-color
+        &.active
+          a
+            color $font-color

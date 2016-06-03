@@ -1,0 +1,17 @@
+<div id="hhpp-videos">
+  <div class="grid-25 tablet-grid-33 mobile-grid-50 video-sizer-element"></div>
+
+  <div class="main-video video-container grid-75 tablet-grid-100 mobile-grid-100" data-video-category="{{ page.video.category }}" data-video="{{ page.video.key }}">
+    <iframe src="https://player.vimeo.com/video/168772085?title=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  </div>
+
+  {% for video in page.videos %}
+    {% if video.key != page.video.key %}
+      <div class="related-video video-container grid-25 tablet-grid-33 mobile-grid-50" data-video-category="{{ video.category }}" data-video="{{ video.key }}">
+        <a class="video-link" href="{{ video.path | prepend: site.baseurl }}">
+          <div class="video">{{ video.title }}</div>
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
