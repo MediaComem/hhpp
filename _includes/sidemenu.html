@@ -2,7 +2,7 @@
   <ul{% if page.video_category %} class="video-category-active"{% endif %}>
     {% for category in site.data.hhpp.categories %}
       <li{% if page.video_category.key == category.key %} class="active"{% endif %}>
-        <a class="video-link" href="/{{ category.key | prepend: site.baseurl }}" data-page-type="category" data-video-category="{{ category.key }}">{{ category.title }}</a>
+        <a class="video-link" href="{{ category.videos[0].path_in_category | prepend: site.baseurl }}" data-page-type="category" data-video-category="{{ category.key }}">{{ category.title }}</a>
       </li>
     {% endfor %}
     <li class="all {% unless page.video_category %} hidden{% endunless %}">

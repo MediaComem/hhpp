@@ -14,6 +14,18 @@ $(function() {
       return $(container).data('video');
     });
 
+    if (!data.initialized && data.videoChanged) {
+      HHPP.getCurrentVideo().then(function(video) {
+
+        $mainVideo = videosElement.find('.main-video');
+        shuffler.remove($mainVideo);
+
+        $mainVideo = HHPP.buildMainVideoContainer(video);
+        $mainVideo.appendTo(videosElement);
+        shuffler.add($mainVideo);
+      });
+    }
+
     HHPP.getCurrentRelatedVideos().then(function(videos) {
 
       var videoKeys = _.map(videos, 'key');

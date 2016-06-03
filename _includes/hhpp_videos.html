@@ -8,7 +8,7 @@
   {% for video in page.videos %}
     {% if video.key != page.video.key %}
       <div class="related-video video-container grid-25 tablet-grid-33 mobile-grid-50" data-video-category="{{ video.category }}" data-video="{{ video.key }}">
-        <a class="video-link" href="{{ video.path | prepend: site.baseurl }}">
+        <a class="video-link" href="{% if page.page_type == 'video_in_category' or page.page_type == 'category' %}{{ video.path_in_category | prepend: site.baseurl }}{% else %}{{ video.path | prepend: site.baseurl }}{% endif %}">
           <div class="video">{{ video.title }}</div>
         </a>
       </div>

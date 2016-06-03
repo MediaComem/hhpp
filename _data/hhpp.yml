@@ -8,31 +8,41 @@ videos:
   - key: la-crise
     title: "La crise"
     category: les-incontournables
+    video_id: 168430486
   - key: le-diagnostic
     title: "Le diagnostic"
     category: les-incontournables
+    video_id: 164996458
   - key: le-cerveau
     title: "Le cerveau"
     category: les-incontournables
+    video_id: 167145049
   - key: la-folie
     title: "La folie"
     category: les-incontournables
+    video_id: 168232590
   - key: la-souffrance-psychique
     title: "La souffrance psychique"
     category: les-incontournables
+    video_id: 164940065
   - key: le-medicament
     title: "Le médicament"
     category: les-incontournables
+    video_id: 159069175
   - key: les-neurosciences
     title: "Les neurosciences"
     category: les-incontournables
+    video_id: 166930720
   - key: isolement
     title: "L'isolement"
     category: les-incontournables
+    video_id: 167796382
 
   - key: waking-life
     title: "Waking life"
     category: une-parole-un-recit
+    video_id: 167593733
   - key: les-oiseaux
     title: "Les oiseaux"
     category: une-parole-un-recit
+    video_id: 168116005

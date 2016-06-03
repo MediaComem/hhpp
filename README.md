@@ -8,15 +8,17 @@
 
 * [Jekyll](https://jekyllrb.com) (install with `gem install jekyll`)
 
-* [Gulp](http://gulpjs.com) for developmentk(install with `npm install -g gulp`)
+* [Gulp](http://gulpjs.com) for development (install with `npm install -g gulp`)
 
 
 
 ## Development
 
-* Clone this repo.
+* Clone this repo and move into its directory.
 
-* Run `jekyll serve` in the repo.
+* Install Node.js dependencies with `npm install`.
+
+* Run `jekyll serve`.
 
 * Run `gulp dev` to compile and inject assets (and watch for changes).
 
