@@ -1,8 +1,10 @@
 categories:
   - key: les-incontournables
     title: "Les incontournables"
+    color: 01a19f
   - key: une-parole-un-recit
     title: "Une parole, un récit"
+    color: ff0044
 
 videos:
   - key: la-crise

@@ -305,18 +305,24 @@
      */
     buildVideoContainer: function(video) {
 
-      var $container = $('<div class="related-video video-container video-visible grid-25 tablet-grid-33 mobile-grid-50" />');
-      $container.attr('data-video', video.key);
+      var url = buildVideoUrl(video.key, this.currentCategoryKey);
 
-      var $link = $('<a class="video-link" />');
-      $link.attr('href', buildVideoUrl(video.key, this.currentCategoryKey));
-      $link.appendTo($container);
+      return this.getCategory(video.category).then(function(category) {
 
-      var $videoElement = $('<div class="video" />');
-      $videoElement.text(video.title);
-      $videoElement.appendTo($link);
+        var $container = $('<div class="related-video video-container video-visible grid-25 tablet-grid-33 mobile-grid-50" />');
+        $container.attr('data-video', video.key);
 
-      return $container;
+        var $link = $('<a class="video-link" />');
+        $link.attr('href', url);
+        $link.appendTo($container);
+
+        var $videoElement = $('<div class="video" />');
+        $videoElement.text(video.title);
+        $videoElement.css('background-color', '#' + category.color);
+        $videoElement.appendTo($link);
+
+        return $container;
+      });
     },
 
     /**

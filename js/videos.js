@@ -18,11 +18,13 @@ $(function() {
       HHPP.getCurrentVideo().then(function(video) {
 
         $mainVideo = videosElement.find('.main-video');
-        shuffler.remove($mainVideo);
+        shuffler.remove($mainVideo.get());
 
-        $mainVideo = HHPP.buildMainVideoContainer(video);
-        $mainVideo.appendTo(videosElement);
-        shuffler.add($mainVideo);
+        setTimeout(function() {
+          $mainVideo = HHPP.buildMainVideoContainer(video);
+          $mainVideo.appendTo(videosElement);
+          shuffler.add($mainVideo.get());
+        }, 1);
       });
     }
 
@@ -46,13 +48,15 @@ $(function() {
 
       if (videoContainersToRemove.length) {
         numberOfElementsToRemove = videoContainersToRemove.length;
-        shuffler.remove(videoContainersToRemove);
+        shuffler.remove(videoContainersToRemove.get());
       }
 
       if (newVideos.length) {
-        var newVideoContainers = _.map(newVideos, _.bind(HHPP.buildVideoContainer, HHPP));
-        videosElement.append(newVideoContainers);
-        shuffler.add(_.invokeMap(newVideoContainers, 'get', 0));
+        $.when.apply($, _.map(newVideos, _.bind(HHPP.buildVideoContainer, HHPP))).then(function() {
+          var newVideoContainers = Array.prototype.slice.call(arguments);
+          videosElement.append(newVideoContainers);
+          shuffler.add(_.invokeMap(newVideoContainers, 'get', 0));
+        });
       }
     }, fallBackToStaticVideos);
   });
