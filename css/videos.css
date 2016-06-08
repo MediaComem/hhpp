@@ -14,6 +14,9 @@
 .related-video.video-visible {
   display: block;
 }
+.related-video.video-category-hidden {
+  display: none;
+}
 .related-video .video {
   width: 100%;
   height: 100%;

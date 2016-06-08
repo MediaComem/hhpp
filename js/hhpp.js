@@ -3,8 +3,6 @@
  */
 (function(exports) {
 
-  var initialized = false;
-
   var apiDeferreds = {
     categories: [],
     videos: []
@@ -14,6 +12,8 @@
    * Constructs the HHPP object.
    */
   function HHPP() {
+
+    this.initialized = false;
 
     // The category & video data will be lazily loaded and held in memory.
     this.categories = [];
@@ -76,15 +76,15 @@
           promise = promise.then(setRandomVideoFromCurrentCategory).then(function(video) {
             eventData.videoChanged = video.key != currentVideoKey;
           });
-        } else if (initialized && !previousCategoryKey && categoryKey) {
+        } else if (this.initialized && !previousCategoryKey && categoryKey) {
           promise = promise.then(setRandomVideoIfCategoryChanged).then(function(video) {
             eventData.videoChanged = video.key != currentVideoKey;
           });
         }
       }
 
-      if (!initialized) {
-        initialized = true;
+      if (!this.initialized) {
+        this.initialized = true;
         eventData.initialized = true;
 
         if (pageType == 'index') {
@@ -309,8 +309,9 @@
 
       return this.getCategory(video.category).then(function(category) {
 
-        var $container = $('<div class="related-video video-container video-visible grid-25 tablet-grid-33 mobile-grid-50" />');
+        var $container = $('<div class="related-video video-container grid-25 tablet-grid-33 mobile-grid-50" />');
         $container.attr('data-video', video.key);
+        $container.attr('data-video-category', video.category);
 
         var $link = $('<a class="video-link" />');
         $link.attr('href', url);
@@ -326,21 +327,13 @@
     },
 
     /**
-     * Returns a jQuery element representing the currently selected main video.
+     * Returns the full URL for the specified video, suitable for display in an iframe.
      *
      * @param {object} video
-     * @returns {jQuery}
+     * @returns string
      */
-    buildMainVideoContainer: function(video) {
-
-      var $container = $('<div class="main-video video-container grid-75 tablet-grid-100 mobile-grid-100" />');
-      $container.attr('data-video', video.key);
-
-      var $iframe = $('<iframe width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
-      $iframe.attr('src', 'https://player.vimeo.com/video/' + video.video_id + '?color=7ac2be&title=0&byline=0&portrait=0');
-      $iframe.appendTo($container);
-
-      return $container;
+    getVideoUrl: function(video) {
+      return 'https://player.vimeo.com/video/' + video.video_id + '?color=7ac2be&title=0&byline=0&portrait=0';
     },
 
     /**
@@ -366,7 +359,7 @@
   });
 
   $(document).on('click', 'a.video-link', function(event) {
-    if (historyEnabled()) {
+    if (hhpp.initialized && historyEnabled()) {
       event.preventDefault();
 
       var $link = $(event.currentTarget),
@@ -403,6 +396,10 @@
   });
 
   function initialize() {
+    if (!$('#hhpp-videos').length) {
+      return;
+    }
+
     var $head = $('head');
     hhpp.setCurrentVideo($head.data('video'), $head.data('video-category'), $head.data('page-type') || 'index').then(function() {
       replaceHistoryState();
