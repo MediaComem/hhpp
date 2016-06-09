@@ -48,7 +48,11 @@ module Jekyll
       hhpp_data['videos'].each do |video|
         video['path'] = "/#{video['key']}"
         video['path_in_category'] = "/#{video['category']}/#{video['key']}"
+
         video_category = hhpp_data['categories'].find{ |cat| cat['key'] == video['category'] }
+        video['category_title'] = video_category['title']
+        video['category_color'] = video_category['color']
+
         site.pages << HhppVideoPage.new(site: site, base: site.source, dir: video['key'], page_type: 'video', video: video)
         site.pages << HhppVideoPage.new(site: site, base: site.source, dir: File.join(video['category'], video['key']), page_type: 'video_in_category', video: video, video_category: video_category)
       end

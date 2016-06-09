@@ -1,9 +1,13 @@
 $(function() {
 
   var shuffler,
-      numberOfElementsToRemove = 0,
+      autoPlayVimeo = false,
+      vimeoPlayerOrigin = '*',
       $videosContainer = $('#hhpp-videos'),
-      $mainVideo = $videosContainer.find('.main-video');
+      $mainVideo = $videosContainer.find('.main-video'),
+      $mainVideoIframe = $mainVideo.find('iframe');
+
+  forwardVimeoPlayerEvents();
 
   HHPP.events.on('hhpp-video-changed', function(event, data) {
 
@@ -23,13 +27,26 @@ $(function() {
     // If the current video changes, update the URL of the iframe displaying it.
     if (!data.initialized && data.videoChanged) {
       HHPP.getCurrentVideo().then(function(video) {
+
         $mainVideo.find('iframe').attr('src', HHPP.getVideoUrl(video));
+
+        $relatedVideos = $videosContainer.find('.related-video');
+        $relatedVideos.filter('[data-video-category="' + video.category + '"]').addClass('current-category');
+        $relatedVideos.filter('[data-video-category!="' + video.category + '"]').removeClass('current-category');
       });
     }
 
     // If the video or the category changes, tell shuffle to re-filter and re-sort.
     if (!data.initialized && (data.videoChanged || data.categoryChanged)) {
       filterShuffler();
+    }
+  });
+
+  HHPP.events.on('vimeo-ready', function(event, data) {
+    if (autoPlayVimeo) {
+      playMainVideo();
+    } else {
+      autoPlayVimeo = true;
     }
   });
 
@@ -52,13 +69,20 @@ $(function() {
   }
 
   function generateRelatedVideos() {
-    HHPP.getVideos().then(function(videos) {
+    $.when(HHPP.getVideos(), HHPP.getVideoCategory(HHPP.currentVideoKey)).then(function(videos, currentVideoCategory) {
       $.when.apply($, _.map(videos, _.bind(HHPP.buildVideoContainer, HHPP))).then(function() {
 
         var $newVideoContainers = Array.prototype.slice.call(arguments);
         _.each($newVideoContainers, function(element) {
+
+          $video = $(element);
+
           if (isVideoElementVisible(element)) {
-            $(element).addClass('video-visible');
+            $video.addClass('video-visible');
+          }
+
+          if (currentVideoCategory && $video.data('video-category') == currentVideoCategory.key) {
+            $video.addClass('current-category');
           }
         });
 
@@ -88,5 +112,49 @@ $(function() {
 
   function removeRelatedVideos() {
     $videosContainer.find('.video-container.related-video').remove();
+  }
+
+  function playMainVideo() {
+    postVimeoMessage('play');
+  }
+
+  function postVimeoMessage(action, value) {
+
+    var data = {
+      method: action
+    };
+
+    if (value) {
+        data.value = value;
+    }
+
+    var message = JSON.stringify(data);
+    $mainVideoIframe[0].contentWindow.postMessage(message, vimeoPlayerOrigin);
+  }
+
+  function forwardVimeoPlayerEvents() {
+
+    // Listen for messages from the player.
+    if (window.addEventListener) {
+      window.addEventListener('message', onMessageReceived, false);
+    } else {
+      window.attachEvent('onmessage', onMessageReceived, false);
+    }
+
+    function onMessageReceived(event) {
+
+      // Only handle messages from the vimeo player.
+      if (!(/^https?:\/\/player.vimeo.com/).test(event.origin)) {
+        return false;
+      }
+
+      if (vimeoPlayerOrigin === '*') {
+        vimeoPlayerOrigin = event.origin;
+      }
+
+      var data = JSON.parse(event.data);
+
+      HHPP.events.trigger('vimeo-' + data.event, data);
+    }
   }
 });

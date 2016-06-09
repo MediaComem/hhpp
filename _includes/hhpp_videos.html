@@ -7,9 +7,16 @@
 
   {% for video in site.data.hhpp.videos %}
     {% if video.key != page.video.key %}
-      <div class="related-video video-container grid-25 tablet-grid-33 mobile-grid-50{% if page.page_type == 'category' or page.page_type == 'video_in_category' %}{% if video.category != page.video_category.key %} video-category-hidden{% endif %}{% endif %}" data-video-category="{{ video.category }}" data-video="{{ video.key }}">
+      <div class="related-video video-container grid-25 tablet-grid-33 mobile-grid-50{% if page.page_type == 'category' or page.page_type == 'video_in_category' %}{% if video.category != page.video_category.key %} video-category-hidden{% endif %}{% endif %}{% if video.category == page.video.category %} current-category{% endif %}" data-video-category="{{ video.category }}" data-video="{{ video.key }}">
         <a class="video-link" href="{% if page.page_type == 'video_in_category' or page.page_type == 'category' %}{{ video.path_in_category | prepend: site.baseurl }}{% else %}{{ video.path | prepend: site.baseurl }}{% endif %}">
-          <div class="video">{{ video.title }}</div>
+          <div class="video" style="background-color: #{{ video.category_color }};">
+            <div class="title-container">
+              <h3>
+                <small>{{ video.category_title }}:</small>
+                {{ video.title }}
+              </h3>
+            </div>
+          </div>
         </a>
       </div>
     {% endif %}

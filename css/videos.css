@@ -18,9 +18,32 @@
   display: none;
 }
 .related-video .video {
+  display: table;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   background-color: #c0c0c0;
+}
+.related-video .video .title-container {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+  padding: 1em;
+}
+.related-video .video .title-container h3 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.3em;
+  font-weight: normal;
+}
+.related-video .video .title-container h3 small {
+  display: block;
+  font-size: 0.7em;
+  margin-bottom: 0.4em;
+}
+.related-video.current-category .title-container h3 small {
+  display: none;
 }
 .video-category-hidden {
   display: none;

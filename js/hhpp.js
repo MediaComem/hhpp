@@ -318,9 +318,20 @@
         $link.appendTo($container);
 
         var $videoElement = $('<div class="video" />');
-        $videoElement.text(video.title);
         $videoElement.css('background-color', '#' + category.color);
         $videoElement.appendTo($link);
+
+        var $titleContainer = $('<div class="title-container" />');
+        $titleContainer.appendTo($videoElement);
+
+        var $titleElement = $('<h3 />');
+        $titleElement.text(video.title);
+        $titleElement.prepend(' ');
+        $titleElement.appendTo($titleContainer);
+
+        var $categoryTitleElement = $('<small />');
+        $categoryTitleElement.text(category.title + ':');
+        $categoryTitleElement.prependTo($titleElement);
 
         return $container;
       });
@@ -333,7 +344,7 @@
      * @returns string
      */
     getVideoUrl: function(video) {
-      return 'https://player.vimeo.com/video/' + video.video_id + '?color=7ac2be&title=0&byline=0&portrait=0';
+      return 'https://player.vimeo.com/video/' + video.video_id + '?color=7ac2be&title=0&byline=0&portrait=0&badge=0';
     },
 
     /**
