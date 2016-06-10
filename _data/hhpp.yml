@@ -1,12 +1,20 @@
 categories:
   - key: les-incontournables
     title: "Les incontournables"
-    color: 01a19f
+    color: "01a19f"
   - key: une-parole-un-recit
     title: "Une parole, un récit"
-    color: ff0044
+    color: "ff0044"
+  - key: penser-rever-et-se-situer
+    title: "Penser, rêver et se situer"
+    color: "753299"
+  - key: savoirs-et-pratiques
+    title: "Savoirs et pratiques"
+    color: "3399ff"
 
 videos:
+
+  # Vidéos dans la catégorie: les incontournables
   - key: la-crise
     title: "La crise"
     category: les-incontournables
@@ -40,6 +48,7 @@ videos:
     category: les-incontournables
     video_id: 167796382
 
+  # Vidéos dans la catégorie: une parole, un récit
   - key: waking-life
     title: "Waking life"
     category: une-parole-un-recit
@@ -48,3 +57,123 @@ videos:
     title: "Les oiseaux"
     category: une-parole-un-recit
     video_id: 168116005
+  - key: le-rat
+    title: Le rat
+    category: une-parole-un-recit
+    video_id: 166415548
+  - key: le-redbull
+    title: Le redbull
+    category: une-parole-un-recit
+    video_id: 169007268
+  - key: les-mots-du-medecin
+    title: Les mots du médecin
+    category: une-parole-un-recit
+    video_id: 166108392
+  - key: la-parentification
+    title: La parentification
+    category: une-parole-un-recit
+    video_id: 169993072
+  - key: la-licorne
+    title: La licorne
+    category: une-parole-un-recit
+    video_id: 169644402
+  - key: ca-toraillait
+    title: Ca toraillait
+    category: une-parole-un-recit
+    video_id: 169499742
+  - key: mon-arrivee-a-swissmedic
+    title: Mon arrivée à Swissmedic
+    category: une-parole-un-recit
+    video_id: 169093115
+  - key: une-relation-fondatrice
+    title: Une relation fondatrice
+    category: une-parole-un-recit
+    video_id: 169195578
+  - key: t-as-peur-de-moi
+    title: T'as peur de moi
+    category: une-parole-un-recit
+    video_id: 156696950
+  - key: nelson-mandela
+    title: Nelson Mandela
+    category: une-parole-un-recit
+    video_id: 169523280
+  - key: les-etudiants-en-crise
+    title: Les étudiants en crise
+    category: une-parole-un-recit
+    video_id: 169500536
+  - key: le-marqueur biologique
+    title: Le marqueur biologique
+    category: une-parole-un-recit
+    video_id: 169539501
+  - key: la-robe-de-mariee
+    title: La robe de mariée
+    category: une-parole-un-recit
+    video_id: 169697352
+  - key: laissons-dire-et-faisons-bien
+    title: Laissons dire et faisons bien
+    category: une-parole-un-recit
+    video_id: 167929086
+  - key: la-boule-de-cristal
+    title: La boule de cristal
+    category: une-parole-un-recit
+    video_id: 169213682
+  - key: l-isolement-un-mot-qui-parle
+    title: L'isolement, un mot qui me parle
+    category: une-parole-un-recit
+    video_id: 85466056
+  - key: l-inconscient-prend-des-dispositions
+    title: L'inconscient prend des dispositions
+    category: une-parole-un-recit
+    video_id: 167195274
+  - key: l-aigle-noir
+    title: L'aigle noir
+    category: une-parole-un-recit
+    video_id: 160751249
+  - key: etre-a-leur-hauteur
+    title: Etre à leur hauteur
+    category: une-parole-un-recit
+    video_id: 169510122
+  - key: je-voulais-une-prise-en-charge-personnelle
+    title: Je voulais une prise en charge personnelle
+    category: une-parole-un-recit
+    video_id: 118488026
+  - key: est-ce-que-je-suis-schizophrene
+    title: Est-ce que je suis schizophrène?
+    category: une-parole-un-recit
+    video_id: 168571093
+  - key: dali-disait
+    title: Dali disait...
+    category: une-parole-un-recit
+    video_id: 166344435
+  - key: j-ai-vendu-des-peugeot
+    title: J'ai vendu des Peugeot
+    category: une-parole-un-recit
+    video_id: 153310960
+
+  # Vidéos dans la catégorie: penser, rêver et se situer
+  - key: sur-la-chaise
+    title: Sur la chaise
+    category: penser-rever-et-se-situer
+    video_id: 168482392
+  - key: questionner-la-psychiatrie-d-urgence
+    title: Questionner la psychiatrie d'urgence
+    category: penser-rever-et-se-situer
+    video_id: 168217509
+  - key: la-folie-comme-subversion
+    title: La folie comme subversion
+    category: penser-rever-et-se-situer
+    video_id: 118846656
+  - key: aux-futurs-soignants
+    title: Aux futur.e.s soignant.e.s
+    category: penser-rever-et-se-situer
+    video_id: 167393424
+
+  # Vidéos dans la catégorie: savoirs et pratiques
+  - key: du-modele-animal-au-patient
+    title: Du modèle animal au patient
+    category: savoirs-et-pratiques
+    video_id: 168899094
+  - key: l-hypothese-glutathion
+    title: L'hypothèse glutathion
+    category: savoirs-et-pratiques
+    video_id: 168232487
