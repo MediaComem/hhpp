@@ -27,6 +27,8 @@ exclude:
   - package.json
   - npm-shrinkwrap.json
   - node_modules
+  - README.md
+  - "*.sh"
 
 keep_files:
   - api
