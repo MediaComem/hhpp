@@ -318,7 +318,7 @@
         $link.appendTo($container);
 
         var $videoElement = $('<div class="video" />');
-        $videoElement.css('background-color', '#' + category.color);
+        $videoElement.css('background-color', video.color);
         $videoElement.appendTo($link);
 
         var $titleContainer = $('<div class="title-container" />');

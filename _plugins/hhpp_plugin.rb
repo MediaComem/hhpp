@@ -39,22 +39,33 @@ module Jekyll
         page.name == 'index.html'
       end
 
+      url_keys = Set.new
+
       hhpp_data['categories'].each do |category|
-        category['path'] = "/#{category['key']}"
-        category['videos'] = hhpp_data['videos'].select{ |video| video['category'] == category['key'] }
-        site.pages << HhppVideoPage.new(site: site, base: site.source, dir: category['key'], page_type: 'category', video: category['videos'].first, video_category: category)
+
+        key = category['key']
+        raise "Category key #{key.inspect} was already encountered" if url_keys.include? key
+        url_keys << key
+
+        category['path'] = "/#{key}"
+        category['videos'] = hhpp_data['videos'].select{ |video| video['category'] == key }
+        site.pages << HhppVideoPage.new(site: site, base: site.source, dir: key, page_type: 'category', video: category['videos'].first, video_category: category)
       end
 
       hhpp_data['videos'].each do |video|
-        video['path'] = "/#{video['key']}"
-        video['path_in_category'] = "/#{video['category']}/#{video['key']}"
+
+        key = video['key']
+        raise "Video key #{key.inspect} was already encountered" if url_keys.include? key
+        url_keys << key
+
+        video['path'] = "/#{key}"
+        video['path_in_category'] = "/#{video['category']}/#{key}"
 
         video_category = hhpp_data['categories'].find{ |cat| cat['key'] == video['category'] }
         video['category_title'] = video_category['title']
-        video['category_color'] = video_category['color']
 
-        site.pages << HhppVideoPage.new(site: site, base: site.source, dir: video['key'], page_type: 'video', video: video)
-        site.pages << HhppVideoPage.new(site: site, base: site.source, dir: File.join(video['category'], video['key']), page_type: 'video_in_category', video: video, video_category: video_category)
+        site.pages << HhppVideoPage.new(site: site, base: site.source, dir: key, page_type: 'video', video: video)
+        site.pages << HhppVideoPage.new(site: site, base: site.source, dir: File.join(video['category'], key), page_type: 'video_in_category', video: video, video_category: video_category)
       end
 
       hhpp_data['categories'].each do |category|
