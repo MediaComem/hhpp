@@ -14,10 +14,22 @@
       &.hidden
         display none
 
+      a
+        color $link-color
+        text-decoration none
+        &:hover
+          color $link-hover-color
+          text-decoration underline
+
     &.video-category-active
       li
         a
-          color $muted-font-color
+          color $inactive-link-color
+          &:hover
+            color $link-color
         &.active
           a
-            color $font-color
+            color $link-color
+            &:hover
+              color $link-color
+              text-decoration none
