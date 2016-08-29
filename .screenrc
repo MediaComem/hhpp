@@ -1,7 +1,7 @@
 source $HOME/.screenrc
 
 screen -t jekyll 0
-stuff "jekyll serve --drafts\012"
+stuff "jekyll serve --drafts --baseurl ''\012"
 screen -t vim 1
 stuff "\${PROJECT_EDITOR-\$EDITOR}\012"
 screen -t zsh 2
