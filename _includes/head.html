@@ -9,14 +9,14 @@
   <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
   <!-- inject:css -->
-  <link rel="stylesheet" href="/vendor/unsemantic.css">
-  <link rel="stylesheet" href="/css/about.css">
-  <link rel="stylesheet" href="/css/footer.css">
-  <link rel="stylesheet" href="/css/header.css">
-  <link rel="stylesheet" href="/css/layout.css">
-  <link rel="stylesheet" href="/css/page.css">
-  <link rel="stylesheet" href="/css/sidemenu.css">
-  <link rel="stylesheet" href="/css/videos.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/vendor/unsemantic.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/about.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/footer.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/header.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/layout.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/page.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/sidemenu.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/css/videos.css">
   <!-- endinject -->
 
   <noscript>

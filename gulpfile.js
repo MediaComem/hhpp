@@ -8,13 +8,18 @@ var _ = require('lodash'),
     util = require('gulp-util'),
     watch = require('gulp-watch');
 
+var injectOptions = {
+  addPrefix: '{{ site.baseurl }}',
+  addRootSlash: false
+};
+
 gulp.task('inject-css', function() {
 
   var css = gulp.src(stylesheets, { read: false });
 
   return gulp
     .src('_includes/head.html')
-    .pipe(inject(css))
+    .pipe(inject(css, injectOptions))
     .pipe(gulp.dest('_includes'));
 });
 
@@ -24,7 +29,7 @@ gulp.task('inject-js', function() {
 
   return gulp
     .src('_includes/footer.html')
-    .pipe(inject(js))
+    .pipe(inject(js, injectOptions))
     .pipe(gulp.dest('_includes'));
 });
 
