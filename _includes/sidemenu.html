@@ -5,9 +5,6 @@
         <a class="video-link" href="{{ category.videos[0].path_in_category | prepend: site.baseurl }}" data-page-type="category" data-video-category="{{ category.key }}">{{ category.title }}</a>
       </li>
     {% endfor %}
-    <li class="all {% unless page.video_category %} hidden{% endunless %}">
-      <a class="video-link" href="{{ site.baseurl }}/">&lt; Voir toutes les vidéos</a>
-    </li>
   </ul>
 
   <hr />
