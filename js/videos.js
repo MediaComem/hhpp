@@ -1,6 +1,7 @@
 $(function() {
 
   var shuffler,
+      lastVideoChange,
       autoPlayVimeo = false,
       vimeoPlayerOrigin = '*',
       $videosContainer = $('#hhpp-videos'),
@@ -10,6 +11,8 @@ $(function() {
   forwardVimeoPlayerEvents();
 
   HHPP.events.on('hhpp-video-changed', function(event, data) {
+
+    lastVideoChange = data;
 
     // First-time initialization.
     if (data.initialized) {
@@ -44,8 +47,12 @@ $(function() {
 
   HHPP.events.on('vimeo-ready', function(event, data) {
     if (autoPlayVimeo) {
-      playMainVideo();
+      // Only auto-play when clicking on a video, not when changing categories.
+      if (lastVideoChange && !lastVideoChange.categoryChanged && lastVideoChange.videoChanged) {
+        playMainVideo();
+      }
     } else {
+      // Do not auto-play when the page is first loaded.
       autoPlayVimeo = true;
     }
   });
@@ -153,7 +160,6 @@ $(function() {
       }
 
       var data = JSON.parse(event.data);
-
       HHPP.events.trigger('vimeo-' + data.event, data);
     }
   }
