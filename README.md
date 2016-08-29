@@ -24,6 +24,16 @@
 
 
 
+## Production
+
+* Clone this repo and move into its directory.
+
+* Install Node.js dependencies with `npm install`.
+
+* Run `./production.sh` to build the site and push it to the `gh-pages` branch.
+
+
+
 ### Assets
 
 * Stylesheets are written in [Stylus](http://stylus-lang.com) in the `_stylus` directory.
