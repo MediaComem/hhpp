@@ -71,6 +71,11 @@
 
         eventData.categoryChanged = true;
 
+        // Re-shuffle videos when going from a category to the main page with all categories.
+        if (!categoryKey) {
+          shuffleVideos(this.videos);
+        }
+
         var currentVideoKey = this.currentVideoKey;
         if (previousCategoryKey && categoryKey) {
           promise = promise.then(setRandomVideoFromCurrentCategory).then(function(video) {
