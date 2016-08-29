@@ -326,12 +326,7 @@
 
         var $titleElement = $('<h3 />');
         $titleElement.text(video.title);
-        $titleElement.prepend(' ');
         $titleElement.appendTo($titleContainer);
-
-        var $categoryTitleElement = $('<small />');
-        $categoryTitleElement.text(category.title + ':');
-        $categoryTitleElement.prependTo($titleElement);
 
         return $container;
       });

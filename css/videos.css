@@ -37,11 +37,6 @@
   font-size: 1.3em;
   font-weight: normal;
 }
-.related-video .video .title-container h3 small {
-  display: block;
-  font-size: 0.7em;
-  margin-bottom: 0.4em;
-}
 .related-video.current-category .title-container h3 small {
   display: none;
 }
