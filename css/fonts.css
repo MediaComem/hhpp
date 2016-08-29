@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'SangBleuSans-Regular-WebS';
+  src: url("../fonts/SangBleuSans-Regular-WebS.eot") /* IE9 Compat Modes */;
+  src: url("../fonts/SangBleuSans-Regular-WebS.eot?#iefix") format('embedded-opentype'), url("../fonts/SangBleuSans-Regular-WebS.woff2") format('woff2'), url("../fonts/SangBleuSans-Regular-WebS.woff") format('woff'), url("../fonts/SangBleuSans-Regular-WebS.ttf") format('truetype'), url("../fonts/SangBleuSans-Regular-WebS.svg#SangBleuSans-Regular-WebS") format('svg') /* Legacy iOS */;
+}
