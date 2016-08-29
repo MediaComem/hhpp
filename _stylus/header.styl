@@ -1,13 +1,28 @@
 @require 'mixins/variables'
 
-.site-header
+#site-header
+  padding-top 1.4em
 
   h1
+    margin 0
     font-size 3em
     font-weight normal
     small
       display block
       font-size $font-size
 
-  img
+  .menu-icon
     float right
+    cursor pointer
+    &.open
+      padding 12px 0 13px 12px
+    &.close
+      padding 15px 0 16px 15px
+
+  .logo
+    float right
+    &.mobile-logo
+      float none
+
+  hr
+    margin-top 1em

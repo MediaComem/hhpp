@@ -1,10 +1,16 @@
-<header class="site-header">
+<header id="site-header">
 
   <div class="wrapper">
 
-    <img class="logo" src="{{ site.baseurl }}/img/logo.png" />
+    <img class="menu-icon open hide-on-tablet hide-on-desktop hide-noscript" src="{{ site.baseurl }}/img/menu-hamburger.png" />
+    <img class="menu-icon close hide-on-tablet hide-on-desktop hide-noscript hidden" src="{{ site.baseurl }}/img/menu-close.png" />
 
-    <h1>
+    <a class="video-link" href="{{ site.baseurl }}/">
+      <img class="logo hide-on-mobile" src="{{ site.baseurl }}/img/logo.png" />
+      <img class="logo mobile-logo hide-on-tablet hide-on-desktop" src="{{ site.baseurl }}/img/logo.png" />
+    </a>
+
+    <h1 class="hide-on-mobile">
       <a class="site-title video-link" href="{{ site.baseurl }}/">
         <small>{{ site.subtitle }}</small>
         {{ site.title }}

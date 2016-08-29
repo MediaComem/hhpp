@@ -1,5 +1,5 @@
 <div id="hhpp-videos">
-  <div class="grid-25 tablet-grid-33 mobile-grid-50 video-sizer-element"></div>
+  <div class="grid-25 tablet-grid-50 mobile-grid-100 video-sizer-element"></div>
 
   <div class="main-video video-container grid-75 tablet-grid-100 mobile-grid-100" data-video-category="{{ page.video.category }}" data-video="{{ page.video.key }}">
     <iframe src="https://player.vimeo.com/video/{{ page.video.video_id }}?title=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -7,7 +7,7 @@
 
   {% for video in site.data.hhpp.videos %}
     {% if video.key != page.video.key %}
-      <div class="related-video video-container grid-25 tablet-grid-33 mobile-grid-50{% if page.page_type == 'category' or page.page_type == 'video_in_category' %}{% if video.category != page.video_category.key %} video-category-hidden{% endif %}{% endif %}{% if video.category == page.video.category %} current-category{% endif %}" data-video-category="{{ video.category }}" data-video="{{ video.key }}">
+      <div class="related-video video-container grid-25 tablet-grid-50 mobile-grid-100{% if page.page_type == 'category' or page.page_type == 'video_in_category' %}{% if video.category != page.video_category.key %} video-category-hidden{% endif %}{% endif %}{% if video.category == page.video.category %} current-category{% endif %}" data-video-category="{{ video.category }}" data-video="{{ video.key }}">
         <a class="video-link" href="{% if page.page_type == 'video_in_category' or page.page_type == 'category' %}{{ video.path_in_category | prepend: site.baseurl }}{% else %}{{ video.path | prepend: site.baseurl }}{% endif %}">
           <div class="video" style="background-color: {{ video.color }};">
             <div class="title-container">

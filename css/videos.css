@@ -43,3 +43,8 @@
 .video-category-hidden {
   display: none;
 }
+@media (max-width: 1024px) {
+  .related-video {
+    height: 160px;
+  }
+}

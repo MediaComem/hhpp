@@ -1,4 +1,4 @@
-<nav id="site-sidemenu">
+<nav id="site-sidemenu" class="show-noscript-block">
   <ul{% if page.video_category %} class="video-category-active"{% endif %}>
     {% for category in site.data.hhpp.categories %}
       <li{% if page.video_category.key == category.key %} class="active"{% endif %}>
@@ -10,4 +10,6 @@
   <hr />
 
   <p><a href="/a-propos">Le projet</a></p>
+
+  <hr class="hide-on-tablet hide-on-desktop" />
 </nav>

@@ -309,7 +309,7 @@
 
       return this.getCategory(video.category).then(function(category) {
 
-        var $container = $('<div class="related-video video-container grid-25 tablet-grid-33 mobile-grid-50" />');
+        var $container = $('<div class="related-video video-container grid-25 tablet-grid-50 mobile-grid-100" />');
         $container.attr('data-video', video.key);
         $container.attr('data-video-category', video.category);
 
