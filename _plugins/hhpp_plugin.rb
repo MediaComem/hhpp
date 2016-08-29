@@ -34,6 +34,7 @@ module Jekyll
 
     def generate site
       hhpp_data = site.data['hhpp']
+      destination = site.config['destination']
 
       index_page = site.pages.find do |page|
         page.name == 'index.html'
@@ -69,16 +70,17 @@ module Jekyll
       end
 
       hhpp_data['categories'].each do |category|
-        json_file = File.join Dir.pwd, '_site', 'api', 'categories', "#{category['key']}.json"
+
+        json_file = File.join destination, 'api', 'categories', "#{category['key']}.json"
         FileUtils.mkdir_p File.dirname(json_file)
         File.open(json_file, 'w'){ |f| f.write JSON.dump(category) }
       end
 
-      api_categories_json_file = File.join Dir.pwd, '_site', 'api', 'categories.json'
+      api_categories_json_file = File.join destination, 'api', 'categories.json'
       api_categories = hhpp_data['categories'].map{ |cat| cat.reject{ |k,v| k == 'videos' } }
       File.open(api_categories_json_file, 'w'){ |f| f.write JSON.dump(api_categories) }
 
-      api_videos_json_file = File.join Dir.pwd, '_site', 'api', 'videos.json'
+      api_videos_json_file = File.join destination, 'api', 'videos.json'
       api_videos = hhpp_data['videos'].map{ |video| video.reject{ |k,v| k == 'path' } }
       File.open(api_videos_json_file, 'w'){ |f| f.write JSON.dump(api_videos) }
 
