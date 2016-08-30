@@ -1,5 +1,8 @@
 # TODO
 
+* [ ] fill project page
+* [ ] set video IDs
+* [ ] set meta description
 * [x] menu link hover
 * [x] when returning to the main screen, randomize videos
 * [x] remove "all videos" link
