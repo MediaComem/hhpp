@@ -398,7 +398,7 @@
   });
 
   hhpp.events.on('hhpp-video-changed', function(event, data) {
-    console.debug('HHPP video changed: ' + JSON.stringify(data));
+    log.debug('HHPP video changed: ' + JSON.stringify(data));
   });
 
   $(function() {

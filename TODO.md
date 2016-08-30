@@ -8,4 +8,4 @@
 * [x] specific color for each video (color theme for category)
 * [x] disable autoplay for category change
 * [x] do not generate video HTML with jQuery (copy from DOM)
-* [ ] disable debug logs in production
+* [x] disable debug logs in production

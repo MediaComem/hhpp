@@ -27,7 +27,7 @@ echo
 
 echo "Building site..."
 echo
-jekyll build -d "$TMP_DIR"
+JEKYLL_ENV=production jekyll build -d "$TMP_DIR"
 echo
 
 
