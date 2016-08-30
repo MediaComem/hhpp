@@ -20,7 +20,7 @@
 
 * Install Node.js dependencies with `npm install`.
 
-* Run `jekyll serve`.
+* Run `jekyll serve --baseurl ''`.
 
 * Run `gulp dev` to compile and inject assets (and watch for changes).
 
