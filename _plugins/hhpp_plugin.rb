@@ -64,13 +64,13 @@ module Jekyll
 
         video_category = hhpp_data['categories'].find{ |cat| cat['key'] == video['category'] }
         video['category_title'] = video_category['title']
+        video['title_color'] = video_category['video_title_color'] || '#ffffff'
 
         site.pages << HhppVideoPage.new(site: site, base: site.source, dir: key, page_type: 'video', video: video)
         site.pages << HhppVideoPage.new(site: site, base: site.source, dir: File.join(video['category'], key), page_type: 'video_in_category', video: video, video_category: video_category)
       end
 
       hhpp_data['categories'].each do |category|
-
         json_file = File.join destination, 'api', 'categories', "#{category['key']}.json"
         FileUtils.mkdir_p File.dirname(json_file)
         File.open(json_file, 'w'){ |f| f.write JSON.dump(category) }

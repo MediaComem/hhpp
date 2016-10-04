@@ -331,6 +331,7 @@
 
         var $titleElement = $element.find('.title');
         $titleElement.text(video.title);
+        $titleElement.css('color', video.title_color);
 
         return $container;
       });

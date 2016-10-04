@@ -11,6 +11,7 @@ categories:
     title: "Trajectoires et expériences"
   - key: parole
     title: "Une parole, un récit"
+    video_title_color: "#000000"
 
 videos:
 
