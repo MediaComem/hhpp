@@ -19,128 +19,128 @@ videos:
     title: "Corps et non verbal"
     color: "#728cc3"
     category: prendre-soin
-    video_id: 148028844
+    video_id: 175689812
   - key: astuces
     title: "Trucs et astuces"
     color: "#53799e"
     category: prendre-soin
-    video_id: 164996458
+    video_id: 175691642
   - key: musique
     title: "La musique comme levier thérapeutique"
     color: "#5471b9"
     category: prendre-soin
-    video_id: 167145049
+    video_id: 175690748
   - key: soignants-demain
     title: "Aux soignantes et soignants de demain"
     color: "#53a9e3"
     category: prendre-soin
-    video_id: 168232590
+    video_id: 175688729
   - key: modeles
     title: "Modèles et influences"
     color: "#058ad4"
     category: prendre-soin
-    video_id: 164940065
+    video_id: 175691434
   - key: relation-therapeutique
     title: "La relation thérapeutique"
     color: "#9ea8d0"
     category: prendre-soin
-    video_id: 159069175
+    video_id: 175691218
   - key: chambre-soins
     title: "La chambre de soins intensifs"
     color: "#7791a5"
     category: prendre-soin
-    video_id: 167796382
+    video_id: 175690473
 
   # Vidéos dans la catégorie "Au fil du temps"
   - key: pharmacologie
     title: "La pharmacologie des années 50 à nos jours"
     color: "#59a944"
     category: fil-du-temps
-    video_id: 167593733
+    video_id: 175680126
   - key: histoire-psychiatrie
     title: "La psychiatrie: quelques éléments d'histoire"
     color: "#1f807c"
     category: fil-du-temps
-    video_id: 168116005
-  - key: enjeux-espoirs
-    title: "Enjeux et espoirs"
+    video_id: 175681279
+  - key: avenir-psy
+    title: "Quel avenir pour la psy"
     color: "#3da369"
     category: fil-du-temps
-    video_id: 166415548
+    video_id: 175685454
   - key: glutathion
     title: "Le glutathion: l'hypothèse du moment"
     color: "#37a497"
     category: fil-du-temps
-    video_id: 169007268
+    video_id: 175683081
   - key: modele-animal
     title: "Du modèle animal au patient"
     color: "#7fab88"
     category: fil-du-temps
-    video_id: 166108392
+    video_id: 175671797
   - key: passe-present
     title: "Eclairer le présent par le passé"
     color: "#7b9e5d"
     category: fil-du-temps
-    video_id: 169993072
+    video_id: 175673181
 
   # Vidéos dans la catégorie "Les mots clés"
   - key: crise
     title: "La crise"
     color: "#c52839"
     category: mots-cles
-    video_id: 169644402
+    video_id: 175692459
   - key: diagnostic
     title: "Le diagnostic"
     color: "#c50956"
     category: mots-cles
-    video_id: 169499742
+    video_id: 175693408
   - key: cerveau
     title: "Le cerveau"
     color: "#cc5855"
     category: mots-cles
-    video_id: 169093115
+    video_id: 175693224
   - key: folie
     title: "La folie"
     color: "#c6006e"
     category: mots-cles
-    video_id: 169195578
+    video_id: 176422507
   - key: souffrance-psychique
     title: "La souffrance psychique"
     color: "#d55471"
     category: mots-cles
-    video_id: 156696950
+    video_id: 175692957
   - key: medicament
     title: "Le médicament"
     color: "#ba4f42"
     category: mots-cles
-    video_id: 169523280
+    video_id: 176421668
   - key: neurosciences
     title: "Les neurosciences"
     color: "#b40145"
     category: mots-cles
-    video_id: 169500536
+    video_id: 175693777
   - key: isolement
     title: "L'isolement"
     color: "#a03e59"
     category: mots-cles
-    video_id: 169539501
+    video_id: 176426951
 
   # Vidéos dans la catégorie "Penser, rêver et se situer"
   - key: psy-philo
     title: "La psy vue par la philo"
     color: "#8a5b91"
     category: penser-rever
-    video_id: 167393424
+    video_id: 176422811
   - key: pheno
     title: "La phénoménologie et le mode d'être au monde"
     color: "#6c418e"
     category: penser-rever
-    video_id: 169697352
+    video_id: 175691000
   - key: urgence
     title: "Questionner la psychiatrie d'urgence"
     color: "#651c8b"
     category: penser-rever
-    video_id: 168217509
+    video_id: 176424173
   - key: subversion
     title: "La folie comme subversion"
     color: "#615089"
@@ -150,208 +150,208 @@ videos:
     title: "Neurosciences et psychiatrie: quel dialogue?"
     color: "#6c4bba"
     category: penser-rever
-    video_id: 167929086
+    video_id: 176424050
   - key: systeme-medicolegal
     title: "Le système médico-légal: un regard critique"
     color: "#4d3494"
     category: penser-rever
-    video_id: 85466056
+    video_id: 176423523
   - key: sur-la-chaise
     title: "Sur la chaise"
     color: "#403256"
     category: penser-rever
-    video_id: 168482392
+    video_id: 176424241
   - key: normal-et-pathologique
     title: "Autour du «normal» et du «pathologique»"
     color: "#4c1a80"
     category: penser-rever
-    video_id: 169213682
+    video_id: 176422350
 
   # Vidéos dans la catégorie "Trajectoires et expériences"
   - key: aide-soignante
     title: "Le point du vue critique d'une aide soignante"
     color: "#9b6729"
     category: trajectoires
-    video_id: 167195274
+    video_id: 176424751
   - key: graap
     title: "Le GRAAP et son Grain de Sel"
     color: "#dea825"
     category: trajectoires
-    video_id: 160751249
+    video_id: 176424433
   - key: vivre-la-maladie
     title: "Vivre la maladie"
     color: "#d6b22a"
     category: trajectoires
-    video_id: 169510122
+    video_id: 176425244
   - key: milieu-carceral
     title: "Une expérience pratique en milieu carcéral"
     color: "#c37023"
     category: trajectoires
-    video_id: 118488026
+    video_id: 176425066
   - key: architecture
     title: "L’architecture d’un hôpital psychiatrique"
     color: "#ac8527"
     category: trajectoires
-    video_id: 168571093
+    video_id: 175682244
   - key: parcours-migratoire
     title: "Prendre en compte le parcours migratoire"
     color: "#c6ba07"
     category: trajectoires
-    video_id: 166344435
+    video_id: 176424882
   - key: art-brut
     title: "Art Brut: les œuvres de l’ombre"
     color: "#cf9523"
     category: trajectoires
-    video_id: 153310960
+    video_id: 176424330
 
   # Vidéos dans la catégorie "Une parole, un récit"
   - key: soins-attentifs
     title: "«Soins attentifs, soins intensifs»"
     color: "#e5d4c3"
     category: parole
-    video_id: 168899094
+    video_id: 176427091
   - key: fou-dans-la-ville
     title: "«Le fou dans la Ville»"
     color: "#d0cce1"
     category: parole
-    video_id: 168899094
+    video_id: 176426351
   - key: pas-une-ombre
     title: "«Il sait très bien qu'il n'est pas une ombre»"
     color: "#d3d6d8"
     category: parole
-    video_id: 168899094
+    video_id: 176425794
   - key: un-delire
     title: "«C'est un délire!»"
     color: "#f9f2e1"
     category: parole
-    video_id: 168899094
+    video_id: 176425633
   - key: sang-de-boeuf
     title: "«Un rouge \"sang de boeuf\"»"
     color: "#d6bcb3"
     category: parole
-    video_id: 168899094
+    video_id: 176427158
   - key: waking-life
     title: "Waking Life"
     color: "#d5edbf"
     category: parole
-    video_id: 168899094
+    video_id: 176427366
   - key: oiseaux
     title: "Les oiseaux"
     color: "#e4f0f8"
     category: parole
-    video_id: 168899094
+    video_id: 176426902
   - key: rat
     title: "Le rat"
     color: "#d4d5d5"
     category: parole
-    video_id: 168899094
+    video_id: 176426545
   - key: redbull
     title: "Le redbull"
     color: "#ccf0ff"
     category: parole
-    video_id: 168899094
+    video_id: 176426709
   - key: mots-du-medecin
     title: "Les mots du médecin"
     color: "#faf8cd"
     category: parole
-    video_id: 168899094
+    video_id: 176426865
   - key: parentification
     title: "La parentification"
     color: "#f6d5c0"
     category: parole
-    video_id: 168899094
+    video_id: 176426151
   - key: licorne
     title: "La licorne"
     color: "#ffe6a5"
     category: parole
-    video_id: 168899094
+    video_id: 176426003
   - key: toraillait
     title: "Ça toraillait"
     color: "#d7d7c6"
     category: parole
-    video_id: 168899094
+    video_id: 176425591
   - key: swissmedic
     title: "Mon arrivée à Swissmedic"
     color: "#cfdfef"
     category: parole
-    video_id: 168899094
+    video_id: 176427006
   - key: relation-fondatrice
     title: "Une relation fondatrice"
     color: "#f6d5dc"
     category: parole
-    video_id: 168899094
+    video_id: 176427287
   - key: peur-de-moi
     title: "T'as peur de moi"
     color: "#"
     category: parole
-    video_id: 168899094
+    video_id: 176427122
   - key: mandela
     title: "Nelson Mandela"
     color: "#cedfa9"
     category: parole
-    video_id: 168899094
+    video_id: 176427054
   - key: etudiants-en-crise
     title: "Les étudiants en crise"
     color: "#f5e6d6"
     category: parole
-    video_id: 168899094
+    video_id: 176426792
   - key: marqueur-biologique
     title: "Le marqueur biologique"
     color: "#d0ded7"
     category: parole
-    video_id: 168899094
+    video_id: 176426398
   - key: robe-de-mariee
     title: "La robe de mariée"
     color: "#fffaf0"
     category: parole
-    video_id: 168899094
+    video_id: 176426206
   - key: laissons-dire
     title: "Laissons dire et faisons bien"
     color: "#c9dfc4"
     category: parole
-    video_id: 168899094
+    video_id: 176426311
   - key: concepts-vieillots
     title: "J’ai des concepts un peu vieillots"
     color: "#ede6ca"
     category: parole
-    video_id: 168899094
+    video_id: 176425856
   - key: un-mot-qui-me-parle
     title: "L'isolement, un mot qui me parle"
     color: "#bec0cb"
     category: parole
-    video_id: 168899094
+    video_id: 176426951
   - key: les-delires
     title: "Les délires ont fait partie de moi"
     color: "#dcc0bb"
     category: parole
-    video_id: 168899094
+    video_id: 176426750
   - key: aigle-noir
     title: "L'aigle noir"
     color: "#cbc7c2"
     category: parole
-    video_id: 168899094
+    video_id: 176426275
   - key: a-leur-hauteur
     title: "Etre à leur hauteur"
     color: "#dceaf7"
     category: parole
-    video_id: 168899094
+    video_id: 176425746
   - key: laisser-aller
     title: "Je pense qu’il y a du «laisser-aller»"
     color: "#eaebd5"
     category: parole
-    video_id: 168899094
+    video_id: 176425972
   - key: schizophrene
     title: "Est-ce que je suis schizophrène?"
     color: "#e7d8db"
     category: parole
-    video_id: 168899094
+    video_id: 176425716
   - key: dali
     title: "Dali disait..."
     color: "#e1eefb"
     category: parole
-    video_id: 168899094
+    video_id: 176425682
   - key: peugeot
     title: "J'ai vendu des Peugeot"
     color: "#fefde2"
     category: parole
-    video_id: 168899094
+    video_id: 176425919
