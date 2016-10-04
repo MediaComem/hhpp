@@ -8,6 +8,8 @@
     videos: []
   };
 
+  var templates = {};
+
   /**
    * Constructs the HHPP object.
    */
@@ -314,24 +316,21 @@
 
       return this.getCategory(video.category).then(function(category) {
 
-        var $container = $('<div class="related-video video-container grid-25 tablet-grid-50 mobile-grid-100" />');
+        var template = getTemplate('related-video'),
+            $element = $(template);
+
+        var $container = $element.closest('.video-container');
         $container.attr('data-video', video.key);
         $container.attr('data-video-category', video.category);
 
-        var $link = $('<a class="video-link" />');
+        var $link = $element.find('.video-link');
         $link.attr('href', url);
-        $link.appendTo($container);
 
-        var $videoElement = $('<div class="video" />');
+        var $videoElement = $element.find('.video');
         $videoElement.css('background-color', video.color);
-        $videoElement.appendTo($link);
 
-        var $titleContainer = $('<div class="title-container" />');
-        $titleContainer.appendTo($videoElement);
-
-        var $titleElement = $('<h3 />');
+        var $titleElement = $element.find('.title');
         $titleElement.text(video.title);
-        $titleElement.appendTo($titleContainer);
 
         return $container;
       });
@@ -399,7 +398,7 @@
   });
 
   hhpp.events.on('hhpp-video-changed', function(event, data) {
-    console.debug('HHPP video changed: ' + JSON.stringify(data));
+    log.debug('HHPP video changed: ' + JSON.stringify(data));
   });
 
   $(function() {
@@ -516,6 +515,20 @@
 
       video.order = number;
     });
+  }
+
+  function getTemplate(name) {
+    if (!templates[name]) {
+
+      $templateElement = $('[data-template="' + name + '"]');
+      if (!$templateElement.length) {
+        throw new Error('Expected to find <script> tag with data-template="' + name + '" attribute');
+      }
+
+      templates[name] = $templateElement.text();
+    }
+
+    return templates[name];
   }
 
 })(window);

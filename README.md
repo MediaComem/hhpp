@@ -16,6 +16,8 @@
 
 * Clone this repo and move into its directory.
 
+* Install Ruby tools with `bundle install`.
+
 * Install Node.js dependencies with `npm install`.
 
 * Run `jekyll serve --baseurl ''`.

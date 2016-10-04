@@ -1,0 +1,14 @@
+{% comment %}
+  This template is included in `hhpp_videos.html` to initially generate a videos page.
+  It is also included in `templates.html` so that it may be retrieved with jQuery to
+  dynamically add new videos.
+{% endcomment %}
+<div class="related-video video-container grid-25 tablet-grid-50 mobile-grid-100{% unless include.raw_template %}{% if page.page_type == 'category' or page.page_type == 'video_in_category' %}{% if video.category != page.video_category.key %} video-category-hidden{% endif %}{% endif %}{% if video.category == page.video.category %} current-category{% endif %}{% endunless %}" data-video-category="{{ video.category }}" data-video="{{ video.key }}">
+  <a class="video-link" href="{% if page.page_type == 'video_in_category' or page.page_type == 'category' %}{{ video.path_in_category | prepend: site.baseurl }}{% else %}{{ video.path | prepend: site.baseurl }}{% endif %}">
+    <div class="video" style="background-color: {{ video.color | default: '#000000' }};">
+      <div class="title-container">
+        <h3 class="title">{{ video.title }}</h3>
+      </div>
+    </div>
+  </a>
+</div>

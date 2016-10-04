@@ -282,7 +282,7 @@ videos:
     video_id: 176427287
   - key: peur-de-moi
     title: "T'as peur de moi"
-    color: "#"
+    color: "#c8c3e4"
     category: parole
     video_id: 176427122
   - key: mandela
