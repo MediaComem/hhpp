@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@vimeo/player": "^1.0.6",
     "jquery": "^2.2.4",
     "lodash": "^4.13.1",
     "modernizr": "^3.3.1",

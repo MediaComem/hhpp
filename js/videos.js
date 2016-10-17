@@ -2,13 +2,15 @@ $(function() {
 
   var shuffler,
       lastVideoChange,
+      vimeoPlayer,
       autoPlayVimeo = false,
       vimeoPlayerOrigin = '*',
+      vimeoPlayerEvents = [ 'ended' ],
       $videosContainer = $('#hhpp-videos'),
       $mainVideo = $videosContainer.find('.main-video'),
       $mainVideoIframe = $mainVideo.find('iframe');
 
-  forwardVimeoPlayerEvents();
+  forwardVimeoEvents();
 
   HHPP.events.on('hhpp-video-changed', function(event, data) {
 
@@ -32,6 +34,9 @@ $(function() {
       HHPP.getCurrentVideo().then(function(video) {
 
         $mainVideo.find('iframe').attr('src', HHPP.getVideoUrl(video));
+        if (vimeoPlayer) {
+          vimeoPlayer.unload();
+        }
 
         $relatedVideos = $videosContainer.find('.related-video');
         $relatedVideos.filter('[data-video-category="' + video.category + '"]').addClass('current-category');
@@ -46,6 +51,8 @@ $(function() {
   });
 
   HHPP.events.on('vimeo-ready', function(event, data) {
+    forwardVimeoPlayerEvents();
+
     if (autoPlayVimeo) {
       // Only auto-play when clicking on a video, not when changing categories.
       if (lastVideoChange && !lastVideoChange.categoryChanged && lastVideoChange.videoChanged) {
@@ -55,6 +62,17 @@ $(function() {
       // Do not auto-play when the page is first loaded.
       autoPlayVimeo = true;
     }
+  });
+
+  HHPP.events.on('vimeo-player-ended', function(event, data) {
+    HHPP.getCurrentRelatedVideos().then(function(videos) {
+      if (!videos.length) {
+        return;
+      }
+
+      var randomVideo = _.sample(videos);
+      HHPP.setCurrentVideo(randomVideo.key, randomVideo.category);
+    });
   });
 
   function initializeShuffler() {
@@ -139,7 +157,7 @@ $(function() {
     $mainVideoIframe[0].contentWindow.postMessage(message, vimeoPlayerOrigin);
   }
 
-  function forwardVimeoPlayerEvents() {
+  function forwardVimeoEvents() {
 
     // Listen for messages from the player.
     if (window.addEventListener) {
@@ -159,8 +177,27 @@ $(function() {
         vimeoPlayerOrigin = event.origin;
       }
 
-      var data = JSON.parse(event.data);
+      var data = _.isString(event.data) ? JSON.parse(event.data) : event.data;
       HHPP.events.trigger('vimeo-' + data.event, data);
     }
+  }
+
+  function forwardVimeoPlayerEvents() {
+
+    /*if (vimeoPlayer) {
+      _.each(vimeoPlayerEvents, function(event) {
+        vimeoPlayer.off(event);
+      });
+    }*/
+
+    vimeoPlayer = new Vimeo.Player($mainVideoIframe);
+
+    _.each(vimeoPlayerEvents, function(event) {
+      console.log('listening to ' + event);
+      vimeoPlayer.on(event, function(data) {
+        console.log(event + ' event received');
+        HHPP.events.trigger('vimeo-player-' + event, data);
+      });
+    });
   }
 });
