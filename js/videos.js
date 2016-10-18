@@ -32,15 +32,11 @@ $(function() {
     // If the current video changes, update the URL of the iframe displaying it.
     if (!data.initialized && data.videoChanged) {
       HHPP.getCurrentVideo().then(function(video) {
-
-        $mainVideo.find('iframe').attr('src', HHPP.getVideoUrl(video));
-        if (vimeoPlayer) {
-          vimeoPlayer.unload();
-        }
-
-        $relatedVideos = $videosContainer.find('.related-video');
-        $relatedVideos.filter('[data-video-category="' + video.category + '"]').addClass('current-category');
-        $relatedVideos.filter('[data-video-category!="' + video.category + '"]').removeClass('current-category');
+        vimeoPlayer.loadVideo(video.video_id).then(function() {
+          $relatedVideos = $videosContainer.find('.related-video');
+          $relatedVideos.filter('[data-video-category="' + video.category + '"]').addClass('current-category');
+          $relatedVideos.filter('[data-video-category!="' + video.category + '"]').removeClass('current-category');
+        });
       });
     }
 
@@ -71,7 +67,9 @@ $(function() {
       }
 
       var randomVideo = _.sample(videos);
-      HHPP.setCurrentVideo(randomVideo.key, randomVideo.category);
+      HHPP.setCurrentVideo(randomVideo.key, randomVideo.category, undefined, {
+        updateLocation: true
+      });
     });
   });
 
@@ -183,19 +181,10 @@ $(function() {
   }
 
   function forwardVimeoPlayerEvents() {
-
-    /*if (vimeoPlayer) {
-      _.each(vimeoPlayerEvents, function(event) {
-        vimeoPlayer.off(event);
-      });
-    }*/
-
     vimeoPlayer = new Vimeo.Player($mainVideoIframe);
 
     _.each(vimeoPlayerEvents, function(event) {
-      console.log('listening to ' + event);
       vimeoPlayer.on(event, function(data) {
-        console.log(event + ' event received');
         HHPP.events.trigger('vimeo-player-' + event, data);
       });
     });

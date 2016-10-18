@@ -40,7 +40,8 @@
       return video && this.currentVideoKey && video.key == this.currentVideoKey && (!this.currentCategoryKey || video.category == this.currentCategoryKey);
     },
 
-    setCurrentVideo: function(videoKey, categoryKey, pageType) {
+    setCurrentVideo: function(videoKey, categoryKey, pageType, options) {
+      options = _.extend({}, options);
 
       var pageTypeChanged = pageType && pageType != this.pageType,
           videoChanged = videoKey && videoKey != this.currentVideoKey,
@@ -103,6 +104,12 @@
             eventData.videoChanged = true;
           });
         }
+      }
+
+      if (options.updateLocation == 'replace') {
+        promise = promise.then(replaceHistoryState);
+      } else if (options.updateLocation) {
+        promise = promise.then(pushHistoryState);
       }
 
       return promise.then(_.partial(triggerVideoChanged, eventData));
@@ -393,7 +400,9 @@
       }
 
       if (videoKey || categoryKey || pageType) {
-        hhpp.setCurrentVideo(videoKey, categoryKey, pageType).then(pushHistoryState);
+        hhpp.setCurrentVideo(videoKey, categoryKey, pageType, {
+          updateLocation: true
+        });
       }
     }
   });
@@ -412,8 +421,8 @@
     }
 
     var $head = $('head');
-    hhpp.setCurrentVideo($head.data('video'), $head.data('video-category'), $head.data('page-type') || 'index').then(function() {
-      replaceHistoryState();
+    hhpp.setCurrentVideo($head.data('video'), $head.data('video-category'), $head.data('page-type') || 'index', {
+      updateLocation: 'replace'
     });
   }
 
