@@ -87,7 +87,9 @@ var stylesheets = [
 var javascripts = [
   'vendor/lodash.js',
   'vendor/jquery.js',
+  'vendor/jquery.smooth-scroll.js',
   'vendor/shuffle.js',
+  'vendor/vimeo.js',
   'js/*.js'
 ];
 
