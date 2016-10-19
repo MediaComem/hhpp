@@ -634,6 +634,11 @@
       "from": "jquery@latest",
       "resolved": "https://registry.npmjs.org/jquery/-/jquery-2.2.4.tgz"
     },
+    "jquery-smooth-scroll": {
+      "version": "2.0.0",
+      "from": "jquery-smooth-scroll@latest",
+      "resolved": "https://registry.npmjs.org/jquery-smooth-scroll/-/jquery-smooth-scroll-2.0.0.tgz"
+    },
     "lodash": {
       "version": "4.13.1",
       "from": "lodash@latest",

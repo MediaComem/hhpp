@@ -112,7 +112,19 @@
         promise = promise.then(pushHistoryState);
       }
 
-      return promise.then(_.partial(triggerVideoChanged, eventData));
+      return promise.then(_.partial(triggerVideoChanged, eventData)).then(function() {
+
+        var deferred = $.Deferred();
+
+        $.smoothScroll({
+          offset: 0,
+          afterScroll: function() {
+            deferred.resolve();
+          }
+        });
+
+        return deferred.promise();
+      });
     },
 
     /**
@@ -401,6 +413,7 @@
 
       if (videoKey || categoryKey || pageType) {
         hhpp.setCurrentVideo(videoKey, categoryKey, pageType, {
+          play: true,
           updateLocation: true
         });
       }

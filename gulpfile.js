@@ -97,6 +97,7 @@ var vendoredAssets = [
   // Javascripts
   { src: 'node_modules/lodash/lodash.js', dest: 'lodash.js' },
   { src: 'node_modules/jquery/dist/jquery.js', dest: 'jquery.js' },
+  { src: 'node_modules/jquery-smooth-scroll/jquery.smooth-scroll.js', dest: 'jquery.smooth-scroll.js' },
   { src: 'node_modules/shufflejs/dist/shuffle.js', dest: 'shuffle.js' },
   { src: 'node_modules/@vimeo/player/dist/player.min.js', dest: 'vimeo.js' }
 ];
