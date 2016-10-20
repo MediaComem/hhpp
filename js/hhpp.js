@@ -54,7 +54,7 @@
       var promise = $.Deferred().resolve();
 
       var eventData = {
-        play: options.play
+        play: videoChanged && !categoryChanged
       };
 
       if (videoChanged) {
@@ -415,7 +415,6 @@
 
       if (videoKey || categoryKey || pageType) {
         hhpp.setCurrentVideo(videoKey, categoryKey, pageType, {
-          play: true,
           updateLocation: true
         });
       }
