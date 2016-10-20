@@ -3,14 +3,13 @@ $(function() {
   var shuffler,
       lastVideoChange,
       vimeoPlayer,
-      autoPlayVimeo = false,
-      vimeoPlayerOrigin = '*',
       vimeoPlayerEvents = [ 'ended' ],
+      vimeoPlayerPlayPromise = $.Deferred().resolve().promise(),
       $videosContainer = $('#hhpp-videos'),
       $mainVideo = $videosContainer.find('.main-video'),
       $mainVideoIframe = $mainVideo.find('iframe');
 
-  forwardVimeoEvents();
+  setUpVimeoPlayer();
 
   HHPP.events.on('hhpp-video-changed', function(event, data) {
 
@@ -31,11 +30,20 @@ $(function() {
 
     // If the current video changes, update the URL of the iframe displaying it.
     if (!data.initialized && data.videoChanged) {
+      // FIXME: avoid doing this if previous video is still loading
       HHPP.getCurrentVideo().then(function(video) {
-        vimeoPlayer.loadVideo(video.video_id).then(function() {
+        vimeoPlayer.loadVideo(video.video_id).then(function handleLoadedVideo() {
+
           $relatedVideos = $videosContainer.find('.related-video');
           $relatedVideos.filter('[data-video-category="' + video.category + '"]').addClass('current-category');
           $relatedVideos.filter('[data-video-category!="' + video.category + '"]').removeClass('current-category');
+
+          if (data.play) {
+            playMainVideo();
+          }
+        }).catch(function(err) {
+          console.warn('Could not play video');
+          console.warn(err);
         });
       });
     }
@@ -43,20 +51,6 @@ $(function() {
     // If the video or the category changes, tell shuffle to re-filter and re-sort.
     if (!data.initialized && (data.videoChanged || data.categoryChanged)) {
       filterShuffler();
-    }
-  });
-
-  HHPP.events.on('vimeo-ready', function(event, data) {
-    forwardVimeoPlayerEvents();
-
-    if (autoPlayVimeo) {
-      // Only auto-play when clicking on a video, not when changing categories.
-      if (lastVideoChange && !lastVideoChange.categoryChanged && lastVideoChange.videoChanged) {
-        playMainVideo();
-      }
-    } else {
-      // Do not auto-play when the page is first loaded.
-      autoPlayVimeo = true;
     }
   });
 
@@ -138,49 +132,10 @@ $(function() {
   }
 
   function playMainVideo() {
-    postVimeoMessage('play');
+    return vimeoPlayer.play();
   }
 
-  function postVimeoMessage(action, value) {
-
-    var data = {
-      method: action
-    };
-
-    if (value) {
-        data.value = value;
-    }
-
-    var message = JSON.stringify(data);
-    $mainVideoIframe[0].contentWindow.postMessage(message, vimeoPlayerOrigin);
-  }
-
-  function forwardVimeoEvents() {
-
-    // Listen for messages from the player.
-    if (window.addEventListener) {
-      window.addEventListener('message', onMessageReceived, false);
-    } else {
-      window.attachEvent('onmessage', onMessageReceived, false);
-    }
-
-    function onMessageReceived(event) {
-
-      // Only handle messages from the vimeo player.
-      if (!(/^https?:\/\/player.vimeo.com/).test(event.origin)) {
-        return false;
-      }
-
-      if (vimeoPlayerOrigin === '*') {
-        vimeoPlayerOrigin = event.origin;
-      }
-
-      var data = _.isString(event.data) ? JSON.parse(event.data) : event.data;
-      HHPP.events.trigger('vimeo-' + data.event, data);
-    }
-  }
-
-  function forwardVimeoPlayerEvents() {
+  function setUpVimeoPlayer() {
     vimeoPlayer = new Vimeo.Player($mainVideoIframe);
 
     _.each(vimeoPlayerEvents, function(event) {

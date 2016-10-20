@@ -53,7 +53,9 @@
 
       var promise = $.Deferred().resolve();
 
-      var eventData = {};
+      var eventData = {
+        play: options.play
+      };
 
       if (videoChanged) {
 
