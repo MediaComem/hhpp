@@ -1,0 +1,22 @@
+.page-about .main,
+.page-about .aside {
+  margin-bottom: 2em;
+}
+.page-about h2 {
+  margin-bottom: 0;
+  font-size: 1em;
+}
+.page-about h2 + p {
+  margin-top: 0;
+}
+.page-about ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.page-about ul.with li {
+  display: inline;
+}
+.page-about ul.with li + li:before {
+  content: ' – ';
+}
