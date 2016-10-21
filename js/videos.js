@@ -136,6 +136,10 @@ $(function() {
   }
 
   function setUpVimeoPlayer() {
+    if (!$mainVideoIframe.length) {
+      return;
+    }
+
     vimeoPlayer = new Vimeo.Player($mainVideoIframe);
 
     _.each(vimeoPlayerEvents, function(event) {
