@@ -55,6 +55,20 @@ $(function() {
   });
 
   HHPP.events.on('vimeo-player-ended', function(event, data) {
+      // Store Cookie
+    HHPP.getCurrentVideo().then(function(video){
+        var viewed = [];
+        if (Cookies.get('viewed')) {
+            cookieString = Cookies.get('viewed');
+            viewed = cookieString.split(",");
+        }
+        // Test if video key is not in array
+        if (viewed.indexOf(video.key) === -1) {
+            viewed.push(video.key);
+        }
+        newCookie = viewed.join(',');
+        Cookies.set('viewed', newCookie);
+    });
     HHPP.getCurrentRelatedVideos().then(function(videos) {
       if (!videos.length) {
         return;
