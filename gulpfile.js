@@ -86,6 +86,7 @@ var stylesheets = [
 
 var javascripts = [
   'vendor/lodash.js',
+  'vendor/js.cookie.js',
   'vendor/jquery.js',
   'vendor/jquery.smooth-scroll.js',
   'vendor/shuffle.js',
@@ -101,5 +102,6 @@ var vendoredAssets = [
   { src: 'node_modules/jquery/dist/jquery.js', dest: 'jquery.js' },
   { src: 'node_modules/jquery-smooth-scroll/jquery.smooth-scroll.js', dest: 'jquery.smooth-scroll.js' },
   { src: 'node_modules/shufflejs/dist/shuffle.js', dest: 'shuffle.js' },
+  { src: 'node_modules/js-cookie/src/js.cookie.js', dest: 'js.cookie.js' },
   { src: 'node_modules/@vimeo/player/dist/player.min.js', dest: 'vimeo.js' }
 ];
