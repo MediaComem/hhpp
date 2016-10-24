@@ -95,6 +95,18 @@ page_class: about
   <li><a href="mailto:Alexia.Stantzos@chuv.ch?Subject=Contact%20Psyphonie">Alexia.Stantzos@chuv.ch</a></li>
   </ul>
 
+  <br /><br />
+  <h2>Avec le soutien de</h2>
+  <div class="partners">
+  <img class="partner-logo" src="/img/HESAV.png" alt="Logo partenaire: HESAV" />
+  <img class="partner-logo" src="/img/CHUV_psy.png" alt="Logo partenaire: CHUV Psychiatrie" />
+  <img class="partner-logo" src="/img/SanteMentale.png" alt="Logo partenaire: Sante Mentale" />
+
+  <img class="partner-logo" src="/img/CHUV_hist.png" alt="Logo partenaire: CHUV Histoire médecine" />
+  <img class="partner-logo" src="/img/LaSource.png" alt="Logo partenaire: Clinique de La Source" />
+  <img class="partner-logo" src="/img/HES-SO.png" alt="Logo partenaire: HES-SO" />
+  </div>
+
 </div>
 
 <div class="grid-25 aside">
