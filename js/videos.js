@@ -68,6 +68,8 @@ $(function() {
   });
 
   function initializeShuffler() {
+      // Webkit has problems with will-change:transform (no full screen).
+    shuffle.ShuffleItem.Css.INITIAL['will-change'] = 'auto';
 
     shuffler = new shuffle($videosContainer, {
       itemSelector: '.video-container',
