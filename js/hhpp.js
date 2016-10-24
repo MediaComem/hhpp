@@ -423,6 +423,7 @@
 
   hhpp.events.on('hhpp-video-changed', function(event, data) {
     log.debug('HHPP video changed: ' + JSON.stringify(data));
+    $('body').attr('class', 'video video-'+data.videoKey);
   });
 
   $(function() {
@@ -438,6 +439,9 @@
     hhpp.setCurrentVideo($head.data('video'), $head.data('video-category'), $head.data('page-type') || 'index', {
       updateLocation: 'replace'
     });
+
+
+
   }
 
   function setRandomVideo() {

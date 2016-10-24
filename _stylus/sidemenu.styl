@@ -1,7 +1,17 @@
 @require 'mixins/variables'
 
+
+
+// Side menu on all pages
 #site-sidemenu
   margin-top 10px
+  a
+    color $inactive-link-color
+    &:hover
+      color $link-color
+      text-decoration underline
+  p a
+    color $link-color
 
   ul
     margin 0
@@ -14,6 +24,12 @@
       &.hidden
         display none
 
+
+// Side menu on home and video pages (body class video)
+.video #site-sidemenu
+
+  ul
+    li
       a
         color $link-color
         text-decoration none
@@ -33,6 +49,8 @@
             &:hover
               color $link-color
               text-decoration none
+
+
 
 @media (max-width: $mobile-grid-max-size)
   #site-sidemenu

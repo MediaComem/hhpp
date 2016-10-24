@@ -3,7 +3,7 @@
 
   {% include head.html %}
 
-  <body>
+  <body{% if page.video_category %} class="video video-{{ page.video.key }}"{% endif %}>
 
     <div class="grid-container">
       <div class="grid-100">

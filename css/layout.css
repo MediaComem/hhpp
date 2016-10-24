@@ -8,6 +8,17 @@ a {
   color: #fff;
   text-decoration: none;
 }
+#page a {
+  color: #b0b0b0;
+}
+#page a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
 .hidden {
   display: none;
+}
+hr {
+  border-bottom: none;
+  border-top: 1px solid #fff;
 }
