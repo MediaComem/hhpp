@@ -207,27 +207,27 @@ videos:
 
   # Vidéos dans la catégorie "Une parole, un récit"
   - key: soins-attentifs
-    title: "«Soins attentifs, soins intensifs»"
+    title: Soins attentifs, soins intensifs
     color: "#e5d4c3"
     category: parole
     video_id: 176427091
   - key: fou-dans-la-ville
-    title: "«Le fou dans la Ville»"
+    title: Le fou dans la Ville
     color: "#d0cce1"
     category: parole
     video_id: 176426351
   - key: pas-une-ombre
-    title: "«Il sait très bien qu'il n'est pas une ombre»"
+    title: Il sait très bien qu'il n'est pas une ombre
     color: "#d3d6d8"
     category: parole
     video_id: 176425794
   - key: un-delire
-    title: "«C'est un délire!»"
+    title: C'est un délire!
     color: "#f9f2e1"
     category: parole
     video_id: 176425633
   - key: sang-de-boeuf
-    title: "«Un rouge \"sang de boeuf\"»"
+    title: Un rouge \"sang de boeuf\"
     color: "#d6bcb3"
     category: parole
     video_id: 176427158
