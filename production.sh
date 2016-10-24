@@ -11,7 +11,7 @@ echo
 
 echo "Creating temporary directory..."
 
-TMP_DIR="$(mktemp -d -t hhpp)"
+TMP_DIR="$(mktemp -d -t hhpp.XXX)"
 
 function cleanup {
   echo "Cleaning up..."
