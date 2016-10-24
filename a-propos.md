@@ -80,7 +80,7 @@ page_class: about
 
   <h2>Développement du site web</h2>
   <ul class="with">
-  <li>Daniel Rappo et Simon Oulevay, COMEM+/HEIG-VD</li>
+  <li><a href="http://mei.heig-vd.ch">MEI - Media Engineering Institute, HEIG-VD</a></li>
   </ul>
 
   <h2>Communication</h2>
