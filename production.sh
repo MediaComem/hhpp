@@ -15,7 +15,7 @@ TMP_DIR="$(mktemp -d -t hhpp)"
 
 function cleanup {
   echo "Cleaning up..."
-  #rm -fr "$TMP_DIR"
+  rm -fr "$TMP_DIR"
 }
 
 trap cleanup EXIT
