@@ -8,6 +8,7 @@
   height: 385px;
 }
 .related-video {
+  text-shadow: none;
   display: none;
   height: 115px;
 }
