@@ -63,6 +63,7 @@
         this.currentVideoKey = videoKey;
 
         eventData.videoChanged = true;
+        eventData.previousVideoKey = previousVideoKey;
 
         if (previousVideoKey) {
           promise = promise.then(_.partial(swapVideosOrder, previousVideoKey, videoKey));
@@ -75,6 +76,7 @@
         this.currentCategoryKey = categoryKey;
 
         eventData.categoryChanged = true;
+        eventData.previousCategoryKey = previousCategoryKey;
 
         // Re-shuffle videos when going from a category to the main page with all categories.
         if (!categoryKey) {

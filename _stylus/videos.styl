@@ -10,6 +10,17 @@
 
 .related-video
   text-shadow none
+  &.viewed>a:before
+      content 'Visionnée'
+      text-transform uppercase
+      font-size 0.7em
+      background rgba(0,0,0,0.6)
+      color white
+      position absolute
+      top 0.5em
+      padding 0.5em
+
+
   @extend .any-video
   display none
   height 115px

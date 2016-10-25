@@ -51,6 +51,12 @@ $(function() {
     // If the video or the category changes, tell shuffle to re-filter and re-sort.
     if (!data.initialized && (data.videoChanged || data.categoryChanged)) {
       filterShuffler();
+      if (data.videoChanged) {
+          $relatedVideos = $videosContainer.find('.related-video');
+          previousVideo = $relatedVideos.filter('[data-video="' + data.previousVideoKey + '"]');
+          console.log(previousVideo["0"]);
+          addClassIfWatched($(previousVideo[0]));
+      }
     }
   });
 
@@ -82,7 +88,7 @@ $(function() {
   });
 
   function initializeShuffler() {
-      // Webkit has problems with will-change:transform (no full screen).
+    // Webkit has problems with will-change:transform (no full screen).
     shuffle.ShuffleItem.Css.INITIAL['will-change'] = 'auto';
 
     shuffler = new shuffle($videosContainer, {
@@ -117,16 +123,36 @@ $(function() {
           if (currentVideoCategory && $video.data('video-category') == currentVideoCategory.key) {
             $video.addClass('current-category');
           }
+          // Add a class if related video is watched
+          addClassIfWatched($video);
         });
 
         $videosContainer.append($newVideoContainers);
         shuffler.add(_.invokeMap($newVideoContainers, 'get', 0));
+
+
 
         setTimeout(function() {
           _.invokeMap($newVideoContainers, 'addClass', 'video-visible');
         }, 1000);
       });
     });
+  }
+
+
+  function addClassIfWatched($video) {
+
+      // Get 'viewed' cookie and check if related video is in list then add class "viewed".
+      if (Cookies.get('viewed')) {
+          cookieString = Cookies.get('viewed');
+          viewed = cookieString.split(",");
+          var slug = $video.attr('data-video');
+          if (viewed.indexOf(slug) > -1) {
+              if (!$video.hasClass('viewed')){
+                $video.addClass('viewed');
+              }
+          }
+      }
   }
 
   function isVideoElementVisible(element) {
