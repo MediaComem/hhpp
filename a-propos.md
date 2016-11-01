@@ -111,7 +111,7 @@ page_class: about
 
 <div class="grid-25 aside">
 
-  <h2>Remerciements particuliers pour</h2>
+  <h2>Remerciements particuliers à</h2>
 
   <ul class="special-thanks">
   <li>Gilles Bangerter</li>
@@ -124,7 +124,7 @@ page_class: about
   <li>Lise Bovet</li>
   <li>Loïse Billat</li>
   <li>Léa Blondel</li>
-  <li>Nowlenn Bühler</li>
+  <li>Nolwenn Bühler</li>
   <li>Anne Buholzer</li>
   <li>Jacques Chapuis</li>
   <li>Mireille Clerc</li>
@@ -163,6 +163,7 @@ page_class: about
   <li>Pierre Ruffieux</li>
   <li>Marie-Luce Ruffieux</li>
   <li>Pierre-Yves Rodondi</li>
+  <li>Michael Saraga</li>
   <li>Mélanie Schmittler</li>
   <li>Josette Stantzos</li>
   <li>Amanda Terzidis</li>
