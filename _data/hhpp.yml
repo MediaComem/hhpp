@@ -124,7 +124,7 @@ videos:
     title: "L'isolement"
     color: "#a03e59"
     category: mots-cles
-    video_id: 176426951
+    video_id: 176422075
 
   # Vidéos dans la catégorie "Penser, rêver et se situer"
   - key: psy-philo
@@ -146,7 +146,7 @@ videos:
     title: "La folie comme subversion"
     color: "#615089"
     category: penser-rever
-    video_id: 188110726
+    video_id: 176422507
   - key: quel-dialogue
     title: "Neurosciences et psychiatrie: quel dialogue?"
     color: "#6c4bba"
@@ -356,3 +356,10 @@ videos:
     color: "#fefde2"
     category: parole
     video_id: 176425919
+
+# A décommenter une fois qu'on a le code couleur
+#  - key:
+#  title: "Il fallait valider"
+#  color: ???
+#  category: parole
+#  video_id: 190870355
