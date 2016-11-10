@@ -47,25 +47,25 @@ gulp.task('watch-stylus', function() {
   });
 });
 
-gulp.task('vendor', function() {
+gulp.task('libs', function() {
 
-  var files = _.map(vendoredAssets, 'src');
+  var files = _.map(libAssets, 'src');
 
   gulp
     .src(files, { base: '.' })
     .pipe(rename(function(filePath) {
 
-      var asset = _.find(vendoredAssets, { src: path.join(filePath.dirname, filePath.basename) + filePath.extname });
+      var asset = _.find(libAssets, { src: path.join(filePath.dirname, filePath.basename) + filePath.extname });
 
       filePath.dirname = path.dirname(asset.dest);
       filePath.basename = path.basename(asset.dest, path.extname(asset.dest));
       filePath.extname = path.extname(asset.dest);
 
-      util.log(util.colors.cyan(asset.src) + ' -> ' + util.colors.cyan(path.join('vendor', asset.dest)));
+      util.log(util.colors.cyan(asset.src) + ' -> ' + util.colors.cyan(path.join('libs', asset.dest)));
 
       return filePath;
     }))
-    .pipe(gulp.dest('vendor'));
+    .pipe(gulp.dest('libs'));
 });
 
 gulp.task('dev', [ 'stylus', 'inject-css', 'inject-js', 'watch-stylus' ]);
@@ -80,21 +80,21 @@ function compileStylus() {
 }
 
 var stylesheets = [
-  'vendor/unsemantic.css',
+  'libs/unsemantic.css',
   'css/*.css'
 ];
 
 var javascripts = [
-  'vendor/lodash.js',
-  'vendor/js.cookie.js',
-  'vendor/jquery.js',
-  'vendor/jquery.smooth-scroll.js',
-  'vendor/shuffle.js',
-  'vendor/vimeo.js',
+  'libs/lodash.js',
+  'libs/js.cookie.js',
+  'libs/jquery.js',
+  'libs/jquery.smooth-scroll.js',
+  'libs/shuffle.js',
+  'libs/vimeo.js',
   'js/*.js'
 ];
 
-var vendoredAssets = [
+var libAssets = [
   // Stylesheets
   { src: 'node_modules/unsemantic/assets/stylesheets/unsemantic-grid-responsive-tablet.css', dest: 'unsemantic.css' },
   // Javascripts
