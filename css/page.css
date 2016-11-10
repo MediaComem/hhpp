@@ -1,0 +1,10 @@
+#page {
+  margin-top: 10px;
+}
+#page h2 {
+  margin-top: 2em;
+  text-decoration: underline;
+}
+#page h2:first-child {
+  margin-top: 0;
+}

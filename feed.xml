@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Polyphonie de la psychiatrie</title>
+    <description>Psyphonie est un support audiovisuel composé de témoignages d’une trentaine d’«acteurs» et «actrices» du champ psychiatrique. Ils et elles sont infirmiers, psychologues, musicothérapeutes, psychiatres, maîtres socio-professionnels, aides-soignantes, personnes ayant vécu une hospitalisation en psychiatrie, architectes, éducateurs, proches de patients, philosophes, neuroscientifiques, pharmacologues, historiens, guides de musée. Chaque personne a été interviewée selon le même canevas sur un fond unique, et nous avons obtenu ainsi environ septante heures de témoignage. Par ces différentes mises en récit, nous voulons souligner le fait que tous les savoirs sur la psychiatrie font sens. Les récits filmés visent à amener un degré de conscience historique, clinique, critique, et à sensibiliser les professionnels de la santé et le grand public aux enjeux de l’histoire, mais aussi à la multitude d’expériences vécues qui ont marqué et marquent encore la psychiatrie.
+</description>
+    <link>http://psyphonie.ch/</link>
+    <atom:link href="http://psyphonie.ch/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 10 Nov 2016 09:45:06 +0100</pubDate>
+    <lastBuildDate>Thu, 10 Nov 2016 09:45:06 +0100</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+  </channel>
+</rss>

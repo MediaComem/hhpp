@@ -1,0 +1,26 @@
+body {
+  color: #fff;
+  background-color: #2e2e2e;
+  font-size: 16px;
+  font-family: SangBleuSans-Regular-WebS, Serif;
+  text-shadow: 0 0 3px #000;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+#page a {
+  color: #b0b0b0;
+}
+#page a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.hidden {
+  display: none;
+}
+hr {
+  border-bottom: 1px solid #cfcfcf;
+  border-top: 1px solid #c6c6c6;
+  box-shadow: 0 0 3px #333;
+}

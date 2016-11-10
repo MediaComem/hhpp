@@ -1,0 +1,31 @@
+#site-header {
+  padding-top: 1.4em;
+}
+#site-header h1 {
+  margin: 0;
+  font-size: 3em;
+  font-weight: normal;
+}
+#site-header h1 small {
+  display: block;
+  font-size: 16px;
+}
+#site-header .menu-icon {
+  float: right;
+  cursor: pointer;
+}
+#site-header .menu-icon.open {
+  padding: 12px 0 13px 12px;
+}
+#site-header .menu-icon.close {
+  padding: 15px 0 16px 15px;
+}
+#site-header .logo {
+  float: right;
+}
+#site-header .logo.mobile-logo {
+  float: none;
+}
+#site-header hr {
+  margin-top: 1em;
+}
