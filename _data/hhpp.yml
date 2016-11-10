@@ -356,10 +356,8 @@ videos:
     color: "#fefde2"
     category: parole
     video_id: 176425919
-
-# A décommenter une fois qu'on a le code couleur
-#  - key:
-#  title: "Il fallait valider"
-#  color: ???
-#  category: parole
-#  video_id: 190870355
+  - key: valider
+    title: "Il fallait valider"
+    color: "#e3ecc9"
+    category: parole
+    video_id: 190870355
